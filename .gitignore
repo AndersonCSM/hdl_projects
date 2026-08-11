@@ -7,17 +7,6 @@
 *.svf
 *.asc
 
-# Simulation and Logs
-.log
-.vcd
-.gtkw
-
-# Artifacts 
-*.qpf
-*.qsf
-*.qws
-
-
 # Build Directories and IDE Artifacts
 build/
 impl/
@@ -25,3 +14,5 @@ output_files/
 db/
 incremental_db/
 simulation/
+compiled_partitions/
+

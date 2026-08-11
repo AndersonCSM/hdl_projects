@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2026 Anderson Carlos
+ * This file is part of HDL Projects.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * For commercial licensing, please contact the author.
+ */
+ 
 module top #(
     parameter BAUD_RATE = 115200,           // velocidade UART
     parameter CLK_FREQ = 27_000_000        // frequência do clock (27MHz para Tang Nano 20K)

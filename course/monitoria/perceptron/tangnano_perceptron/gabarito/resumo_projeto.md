@@ -1,6 +1,6 @@
 # Implementação do Perceptron - Resumo Executivo
 
-## 📋 Visão Geral
+## Visão Geral
 
 Foi implementado um **Perceptron Single Layer** em Verilog para a placa **Tang Nano 1K**, com arquitetura modular composta por 3 módulos principais:
 
@@ -10,13 +10,13 @@ Foi implementado um **Perceptron Single Layer** em Verilog para a placa **Tang N
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                      TOP (Interface)                     │
-│   btn1=Reset | btn2=Start/Train |  led[5:0]=W0/W1      │
-└──────────────┬──────────────────────┬────────────────────┘
+│                      TOP (Interface)                    │
+│   btn1=Reset | btn2=Start/Train |  led[5:0]=W0/W1       │
+└──────────────┬──────────────────────┬───────────────────┘
                │                      │
         ┌──────▼──────┐        ┌──────▼──────┐
         │  CONTROL    │        │  DATAPATH   │
@@ -32,7 +32,7 @@ Foi implementado um **Perceptron Single Layer** em Verilog para a placa **Tang N
 
 ---
 
-## 🧠 Algoritmo do Perceptron
+## Algoritmo do Perceptron
 
 ### Dados de Treinamento (Porta OR)
 ```
@@ -61,7 +61,7 @@ Entrada (x0, x1) │ Saída (y)
 
 ---
 
-## 📊 Módulos Implementados
+## Módulos Implementados
 
 ### 1. **datapath.v** - Perceptron
 
@@ -139,7 +139,7 @@ Saída:
 
 ---
 
-## 🔧 Características Técnicas
+## Características Técnicas
 
 ### Largura de Bits:
 - Entradas: 1 bit (0 ou 1)
@@ -162,18 +162,8 @@ parameter MAX_EPOCH = 4'd15;          // Máximo de épocas
 
 ---
 
-## ✨ Melhorias Implementadas
 
-1. ✅ **Inicialização correta**: Dados de treino carregados no `initial`
-2. ✅ **Contadores sincronizados**: N e EP funcionam adequadamente
-3. ✅ **Status signals**: Permitem FSM tomar decisões corretas
-4. ✅ **Aprendizado Hebbiano**: w ← w + erro × entrada
-5. ✅ **Épocas**: Suporta múltiplas rodadas de treinamento
-6. ✅ **Modularidade**: Fácil integração e teste
-
----
-
-## 🧪 Teste Esperado
+## Teste Esperado
 
 ### Sequência de Operação:
 
@@ -194,7 +184,7 @@ parameter MAX_EPOCH = 4'd15;          // Máximo de épocas
 
 ---
 
-## 📝 Exemplo de Síntese
+## Exemplo de Síntese
 
 Para compilar e programar a FPGA:
 
@@ -206,18 +196,18 @@ make loadram       # Programar a placa
 
 ---
 
-## 🔍 Validação
+## Validação
 
-✅ **Sem erros de sintaxe Verilog**
-✅ **Módulos compilam corretamente**
-✅ **Sinais bem definidos**
-✅ **FSM implementada com 4 estados**
-✅ **Algoritmo perceptron correto**
-✅ **Dados de treino (OR) carregados**
+- **Sem erros de sintaxe Verilog**
+- **Módulos compilam corretamente**
+- **Sinais bem definidos**
+- **FSM implementada com 4 estados**
+- **Algoritmo perceptron correto**
+- **Dados de treino (OR) carregados**
 
 ---
 
-## 📚 Referências
+## Referências
 
 - **Diagrama de Arquitetura**: Veja `image.png`
 - **Prova/Especificações**: Veja `Prova___sistemas_3-1.pdf`
@@ -226,6 +216,6 @@ make loadram       # Programar a placa
 
 ---
 
-**Projeto Concluído!** 🎉
+**Projeto Concluído!** 
 
 O Perceptron está pronto para ser sintetizado e programado na placa Tang Nano 1K.

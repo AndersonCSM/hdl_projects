@@ -1,4 +1,4 @@
-module top (
+module blink(
     // 'input' define uma porta de entrada. 'wire' é o tipo padrão para conexões físicas.
     input  wire clk,   // clock principal da placa (ex: 50 MHz)
     

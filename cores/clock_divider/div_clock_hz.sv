@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2026 Anderson Carlos
+ * This file is part of HDL Projects.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * For commercial licensing, please contact the author.
+ */
+
 module div_clock_hz #(
     // /  Para sobrescrever um parameter na instanciação, você usa o símbolo # antes da lista de parâmetros.
     // Frequencia do clock que entra no modulo, em Hz.

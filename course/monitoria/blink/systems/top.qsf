@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-# Date created = 20:42:58  May 12, 2026
+# Date created = 16:34:27  May 14, 2026
 #
 # -------------------------------------------------------------------------- #
 #
@@ -41,11 +41,8 @@ set_global_assignment -name FAMILY "MAX II"
 set_global_assignment -name DEVICE EPM240T100C5
 set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:42:58  MAY 12, 2026"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:34:26  MAY 14, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
-set_global_assignment -name VERILOG_FILE datapath.v
-set_global_assignment -name VERILOG_FILE top.v
-set_global_assignment -name VERILOG_FILE control.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -58,3 +55,6 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name VERILOG_FILE top.v
+set_location_assignment PIN_12 -to clk
+set_location_assignment PIN_77 -to led
