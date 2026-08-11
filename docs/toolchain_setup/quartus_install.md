@@ -22,7 +22,7 @@ Guide to installing Quartus Prime Lite for development with Altera MAX II boards
 
 ## Visão Geral
 
-**Quartus Prime Lite** é a IDE da Intel (Altera) para desenvolvimento em placas MAX II.
+**Quartus Prime Lite** é a EDA da Intel (Altera) para desenvolvimento em placas MAX II.
 
 | Característica | Valor |
 |---|---|
@@ -133,7 +133,7 @@ jtagconfig
 
 ## Configuração USB Blaster
 
-O USB Blaster é o programador para conectar-se à placa MAX II.
+O USB Blaster é o programa para conectar-se à placa MAX II.
 
 ### Linux: Regras udev
 
