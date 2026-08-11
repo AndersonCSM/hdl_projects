@@ -35,6 +35,15 @@ Once installed, follow these guides to run your first project:
 
 ---
 
+## Licensing & Commercial Use
+
+This repository is dual-licensed:
+
+1. **Open Source (GPLv3)**: The hardware IPs (cores) and systems in this repository are available for free under the [GNU General Public License v3.0](LICENSE). This means you can use, modify, and distribute them freely for educational, personal, or open-source projects, provided that your derived work is also open-sourced under the GPLv3.
+2. **Commercial License**: If you intend to use these IPs in a closed-source proprietary commercial product and do not wish to release your product's source code under the GPLv3, you must obtain a commercial license. Please contact the author for commercial licensing options.
+
+---
+
 ## External Links
 
 ### Primary Tools
