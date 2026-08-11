@@ -1,0 +1,57 @@
+VCD info: dumpfile sim.vcd opened for output.
+════════════════════════════════════════════════════════════
+  SIMULAÇÃO: Perceptron Tang Nano 1K
+  Data: 0
+════════════════════════════════════════════════════════════
+
+[0 ns] FASE 1: RESET
+  → Botão pressionado (btn1 = 0)
+  → Reset ativo (reset = 1)
+[RESET] Estado: INICIAR (limpando tudo...)
+[200 ns] FASE 2: INICIAR SIMULAÇÃO
+  → Botão solto (btn1 = 1)
+  → Reset inativo (reset = 0)
+  → Aguardando clock reduzido (~1 Hz)...
+
+[500040241 ns] [Ciclo 1] INICIAR     | Época: 0 | Amostra: 0 | w0:   0 | w1:   0 | LED: 000000
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[1000080278 ns] [Ciclo 2] AGUARDAR    | Época: 0 | Amostra: 0 | w0:   0 | w1:   0 | LED: 000000
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[1500120315 ns] [Ciclo 3] INICIAR     | Época: 1 | Amostra: 0 | w0:   0 | w1:   0 | LED: 000000
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[2000160352 ns] [Ciclo 4] AGUARDAR    | Época: 1 | Amostra: 0 | w0:   0 | w1:   0 | LED: 000000
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[2500200389 ns] [Ciclo 5] INICIAR     | Época: 1 | Amostra: 1 | w0:   0 | w1:   0 | LED: 000000
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[3000240426 ns] [Ciclo 6] AGUARDAR    | Época: 1 | Amostra: 1 | w0:   0 | w1:   0 | LED: 000000
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[3500280463 ns] [Ciclo 7] INICIAR     | Época: 1 | Amostra: 2 | w0:   1 | w1:   0 | LED: 000001
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[4000320500 ns] [Ciclo 8] AGUARDAR    | Época: 1 | Amostra: 2 | w0:   1 | w1:   0 | LED: 000001
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[4500360537 ns] [Ciclo 9] INICIAR     | Época: 1 | Amostra: 3 | w0:   1 | w1:   1 | LED: 001001
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[5000400574 ns] [Ciclo 10] AGUARDAR    | Época: 1 | Amostra: 3 | w0:   1 | w1:   1 | LED: 001001
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[5500440611 ns] [Ciclo 11] INICIAR     | Época: 1 | Amostra: 4 | w0:   1 | w1:   1 | LED: 001001
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[6000480648 ns] [Ciclo 12] AGUARDAR    | Época: 1 | Amostra: 4 | w0:   1 | w1:   1 | LED: 001001
+[6500520685 ns] [Ciclo 13] AGUARDAR    | Época: 1 | Amostra: 5 | w0:   x | w1:   x | LED: xxxxxx
+  ✗ ERRO: contador_amostra = 5 (máximo = 4)
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[7000560722 ns] [Ciclo 14] INICIAR     | Época: 2 | Amostra: 0 | w0:   x | w1:   x | LED: xxxxxx
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[7500600759 ns] [Ciclo 15] AGUARDAR    | Época: 2 | Amostra: 0 | w0:   x | w1:   x | LED: xxxxxx
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[8000640796 ns] [Ciclo 16] INICIAR     | Época: 2 | Amostra: 1 | w0:   x | w1:   x | LED: xxxxxx
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[8500680833 ns] [Ciclo 17] AGUARDAR    | Época: 2 | Amostra: 1 | w0:   x | w1:   x | LED: xxxxxx
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[9000720870 ns] [Ciclo 18] INICIAR     | Época: 2 | Amostra: 2 | w0:   x | w1:   x | LED: xxxxxx
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[9500760907 ns] [Ciclo 19] AGUARDAR    | Época: 2 | Amostra: 2 | w0:   x | w1:   x | LED: xxxxxx
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0
+[10000800945 ns] [Ciclo 20] INICIAR     | Época: 2 | Amostra: 3 | w0:   x | w1:   x | LED: xxxxxx
+  ✓ TRANSIÇÃO: INICIAR → AGUARDAR
+[10500840982 ns] [Ciclo 21] AGUARDAR    | Época: 2 | Amostra: 3 | w0:   x | w1:   x | LED: xxxxxx
+  ✗ TRANSIÇÃO INESPERADA: 01 → 0

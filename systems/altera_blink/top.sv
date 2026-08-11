@@ -1,5 +1,5 @@
 module top (
-    input  logic clk,   // clock do seu board (ex: 50 MHz)
+    input  logic clk,   // clock da sua placa (ex: 50 MHz)
     output logic led
 );
 

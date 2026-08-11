@@ -7,9 +7,15 @@
 *.asc
 
 # Simulation and Logs
-*.log
-*.vcd
-*.gtkw
+.log
+.vcd
+.gtkw
+
+# Artifacts 
+*.qpf
+*.qsf
+*.qws
+
 
 # Build Directories and IDE Artifacts
 build/

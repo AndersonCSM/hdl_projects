@@ -1,4 +1,4 @@
-# Altera MAX II Development Workflow
+# Development Workflow for Altera
 
 Development using **Quartus Prime Lite** — Altera platform.
 

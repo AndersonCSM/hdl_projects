@@ -1,0 +1,50 @@
+VCD info: dumpfile sim_simple.vcd opened for output.
+[     1] INICIAR     | E:0 A:0 | w0:  0 w1:  0 | soma:    0 pred:0 erro:0
+[     2] AGUARDAR    | E:0 A:0 | w0:  0 w1:  0 | EPDSP:1 APDSP:1
+           >>> INICIAR → AGUARDAR
+[     3] PROPAGACAO | E:1 A:0 | w0:  0 w1:  0 | soma:    0 pred:0 erro:0
+           >>> AGUARDAR → PROPAGACAO
+[     4] RETRO      | E:1 A:0 | w0:  0 w1:  0 | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[     5] PROPAGACAO | E:1 A:1 | w0:  0 w1:  0 | soma:    0 pred:0 erro:1
+           >>> RETRO → PROPAGACAO
+[     6] RETRO      | E:1 A:1 | w0:  0 w1:  0 | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[     7] PROPAGACAO | E:1 A:2 | w0:  1 w1:  0 | soma:    0 pred:0 erro:1
+           >>> RETRO → PROPAGACAO
+[     8] RETRO      | E:1 A:2 | w0:  1 w1:  0 | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[     9] PROPAGACAO | E:1 A:3 | w0:  1 w1:  1 | soma:    2 pred:1 erro:0
+           >>> RETRO → PROPAGACAO
+[    10] RETRO      | E:1 A:3 | w0:  1 w1:  1 | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    11] PROPAGACAO | E:1 A:4 | w0:  1 w1:  1 | soma:    x pred:x erro:x
+           >>> RETRO → PROPAGACAO
+[    12] RETRO      | E:1 A:4 | w0:  1 w1:  1 | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    13] AGUARDAR    | E:1 A:5 | w0:  x w1:  x | EPDSP:1 APDSP:0
+           >>> RETRO → AGUARDAR
+[    14] PROPAGACAO | E:2 A:0 | w0:  x w1:  x | soma:    x pred:x erro:x
+           >>> AGUARDAR → PROPAGACAO
+[    15] RETRO      | E:2 A:0 | w0:  x w1:  x | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    16] PROPAGACAO | E:2 A:1 | w0:  x w1:  x | soma:    x pred:x erro:x
+           >>> RETRO → PROPAGACAO
+[    17] RETRO      | E:2 A:1 | w0:  x w1:  x | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    18] PROPAGACAO | E:2 A:2 | w0:  x w1:  x | soma:    x pred:x erro:x
+           >>> RETRO → PROPAGACAO
+[    19] RETRO      | E:2 A:2 | w0:  x w1:  x | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    20] PROPAGACAO | E:2 A:3 | w0:  x w1:  x | soma:    x pred:x erro:x
+           >>> RETRO → PROPAGACAO
+[    21] RETRO      | E:2 A:3 | w0:  x w1:  x | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    22] PROPAGACAO | E:2 A:4 | w0:  x w1:  x | soma:    x pred:x erro:x
+           >>> RETRO → PROPAGACAO
+[    23] RETRO      | E:2 A:4 | w0:  x w1:  x | ATUALIZADO
+           >>> PROPAGACAO → RETRO
+[    24] AGUARDAR    | E:2 A:5 | w0:  x w1:  x | EPDSP:1 APDSP:0
+           >>> RETRO → AGUARDAR
+[    25] PROPAGACAO | E:3 A:0 | w0:  x w1:  x | soma:    x pred:x erro:x
+           >>> AGUARDAR → PROPAGACAO

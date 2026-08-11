@@ -1,4 +1,4 @@
-# Tang Nano Development Workflow
+# Development Workflow for Tang Nano
 
 This document outlines two development workflows for the Gowin Tang Nano boards (1K, 9K, 20K):
 1. **Gowin IDE (Windows):** Official GUI toolchain.
