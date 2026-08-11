@@ -1,2 +1,0 @@
-Breakpoint File Version 1.0
-98 true C:/Users/ADMIN/Vivado_project/r_i type datapath/r_i type datapath.srcs/sim_1/new/r_i_type_datapath_tb.v

@@ -1,6 +1,6 @@
-# FPGA Projects
+# HDL Projects
 
-Welcome to the **FPGA Projects** repository! This central repository contains HDL designs, examples, and comprehensive documentation for working with Field Programmable Gate Arrays (FPGAs) and Complex Programmable Logic Devices (CPLDs).
+Welcome to the **HDL Projects** repository! This central repository contains HDL designs, examples, and comprehensive documentation for working with Field Programmable Gate Arrays (FPGAs), ASICs chips and Complex Programmable Logic Devices (CPLDs).
 
 ## Supported Hardware
 
@@ -9,12 +9,15 @@ Welcome to the **FPGA Projects** repository! This central repository contains HD
 
 ## Repository Structure
 
-- **`docs/`**: Comprehensive guides, installation tutorials, and workflow steps. **Start here** if you are setting up your environment.
-- **`tang_nano/`**: Specific projects and examples for the Gowin Tang Nano board.
-- **`altera_max_ii/`**: Specific projects and examples for the Altera MAX II board.
-- **`clock_divider/`**: Reusable modules for clock frequency division.
-- **`mips_processor/` & `risc_processor/`**: Educational implementations of processor architectures.
+- **`cores/`**: Reusable hardware blocks (IPs) that are platform-agnostic (e.g., clock dividers, UART controllers);
+- **`systems/`**: Complete embedded projects (Top-levels) targeted for specific FPGA boards (e.g., Altera MAX II, Tang Nano);
+- **`docs/`**: Comprehensive guides, installation tutorials, and workflow steps. **Start here** if you are setting up your environment;
 - **`scripts/`**: Automation scripts (e.g., environment setup).
+
+## Moved Projects
+The educational processor implementations have been moved to their own dedicated repositories:
+- **[MIPS Processor](https://github.com/AndersonCSM/mips_processor)**
+- **[RISC-V Processor](https://github.com/AndersonCSM/riscv_processor)**
 
 ## Installation Guides
 
