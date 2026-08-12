@@ -12,6 +12,7 @@ Installation and configuration guide for the `oss-cad-suite` toolchain for FPGA 
 
 - [Overview](#overview)
 - [Pre-requisites](#pre-requisites)
+- [Gowin EDA (Windows)](#gowin-eda-windows)
 - [Installing oss-cad-suite (Linux)](#installing-oss-cad-suite-linux)
 - [Configuring Environment Variables (Linux)](#configuring-environment-variables-linux)
 - [Installing OpenFPGALoader (Linux)](#installing-openfpgaloader-linux)
@@ -95,6 +96,16 @@ sudo dnf install -y \
 ```
 
 ---
+
+## Gowin EDA (Windows)
+### 1. Installation
+
+1. Download **Gowin FPGA Designer (Education)** from [Gowin's Website](https://www.gowinsemi.com/en/support/download_eda/).
+2. Run the installer as Administrator. It will also install the **Gowin Programmer** and USB FTDI drivers (see [Zadig](#troubleshooting-windows-jtag-and-zadig))
+3. Open Gowin FPGA Designer. If it opens without errors, installation is successful.
+
+**Warning:** The installation and project paths must contain only letters, numbers, and underscores. Avoid spaces, special characters, and accents.
+
 
 ## Installing oss-cad-suite (Linux)
 

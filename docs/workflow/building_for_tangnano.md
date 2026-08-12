@@ -8,52 +8,67 @@ This document outlines two development workflows for the Gowin Tang Nano boards 
 
 ## Index
 
-- [Part 1: Gowin IDE (Windows)](#part-1-gowin-ide-windows)
-  - [1. Installation](#1-installation)
-  - [2. Create Project](#2-create-project)
-  - [3. Create Verilog File and Synthesis](#3-create-verilog-file-and-synthesis)
-  - [4. Constraints and Programming](#4-constraints-and-programming)
-- [Part 2: Open Source Toolchain (Cross-Platform)](#part-2-open-source-toolchain-cross-platform)
-  - [Option A: Workflow via VS Code & Lushay Code (Recommended)](#option-a-workflow-via-vs-code--lushay-code-recommended)
-  - [Option B: Workflow via Makefile (CLI)](#option-b-workflow-via-makefile-cli)
+- [Development Workflow for Tang Nano](#development-workflow-for-tang-nano)
+  - [Index](#index)
+  - [1. Gowin IDE](#1-gowin-ide)
+    - [1.1. Create Project](#11-create-project)
+    - [1.2. Create Verilog File and Synthesis](#12-create-verilog-file-and-synthesis)
+    - [1.3. Constraints and Programming](#13-constraints-and-programming)
+  - [2. Open Source Toolchain (Cross-Platform)](#2-open-source-toolchain-cross-platform)
+    - [Option A: Workflow via VS Code \& Lushay Code (Recommended)](#option-a-workflow-via-vs-code--lushay-code-recommended)
+      - [2.1. Create a Project Folder](#21-create-a-project-folder)
+      - [2.2. Initialize the Project](#22-initialize-the-project)
+      - [2.3. Default Project Files](#23-default-project-files)
+      - [2.4. Basic Constraints (`tang.cst`)](#24-basic-constraints-tangcst)
+      - [2.5. Project Configuration (JSON)](#25-project-configuration-json)
+      - [2.6. Toolchain Execution](#26-toolchain-execution)
+    - [Option B: Workflow via Makefile (CLI)](#option-b-workflow-via-makefile-cli)
+      - [2.1. Project Structure](#21-project-structure)
+      - [2.2. Complete Makefile](#22-complete-makefile)
+      - [2.3. Development Flow](#23-development-flow)
 
 ---
-
-## Part 1: Gowin IDE (Windows)
-
-### 1. Installation
-
-1. Download **Gowin FPGA Designer (Education)** from [Gowin's Website](https://www.gowinsemi.com/en/support/download_eda/).
-2. Run the installer as Administrator. It will also install the **Gowin Programmer** and USB FTDI drivers.
-3. Open Gowin FPGA Designer. If it opens without errors, installation is successful.
-
-**Warning:** The installation and project paths must contain only letters, numbers, and underscores. Avoid spaces, special characters, and accents.
-
-### 2. Create Project
+## 1. Gowin IDE
+### 1.1. Create Project
 
 1. Open **Gowin FPGA Designer**
 2. `File` → `New` → **FPGA Design Project** → OK
+![alt text](img/gowin_new_project.png)
 3. Configure Project Name and Path.
+![alt text](img/gowin_project_settings.png)
 4. Select device (e.g., Series: GW1NZ, Device: GW1NZ-1, Package: QN48, Speed: C6/I5).
+![alt text](img/gowin_device_selection.png)
 5. Click **Finish**.
+![alt text](img/gowin_project_finish.png)
 
-### 3. Create Verilog File and Synthesis
+### 1.2. Create Verilog File and Synthesis
 
-1. `File` → `New` → **Verilog File** → Save as `top.v`.
+1. `File` → `New` → **Verilog File** → Save as `hdl.v`.
+![alt text](img/gowin_new_verilog_file_1.png)
+![alt text](img/gowin_new_verilog_file_2.png)
 2. Write your HDL code.
+![alt text](img/gowin_write_verilog.png)
 3. In the **Process** panel, double-click **Synthesize**.
 4. Check for success in the terminal output.
+![alt text](img/gowin_synthesis_success.png)
 
-### 4. Constraints and Programming
+### 1.3. Constraints and Programming
 
 1. Use the **Floorplanner** to map your Verilog ports to the physical pins of your board (generates `.cst` file).
+![alt text](img/gowin_floorplanner_1.png)
+![alt text](img/gowin_floorplanner_2.png)
+![alt text](img/gowin_floorplanner_3.png)
 2. Double-click **Place & Route** in the Process panel.
+![alt text](img/gowin_place_and_route.png)
 3. Double-click **Program Device**. Ensure the cable is detected as `USB Debugger A`.
+![alt text](img/gowin_programmer_open.png)
 4. Run SRAM Program or Flash Program with your `.fs` bitstream file.
+![alt text](img/gowin_programming_1.png)
+![alt text](img/gowin_programming_2.png)
 
 ---
 
-## Part 2: Open Source Toolchain (Cross-Platform)
+## 2. Open Source Toolchain (Cross-Platform)
 
 **Prerequisite:** Install `oss-cad-suite` and the Lushay Code extension as detailed in [`suit_install.md`](suit_install.md).
 
@@ -61,19 +76,19 @@ This document outlines two development workflows for the Gowin Tang Nano boards 
 
 This workflow utilizes the Lushay Code extension to automate project creation, synthesis, and programming.
 
-#### 1. Create a Project Folder
+#### 2.1. Create a Project Folder
 Create an empty directory for your new project and open it in Visual Studio Code.
 
-#### 2. Initialize the Project
+#### 2.2. Initialize the Project
 - Click on the Lushay Code extension icon or open the Command Palette (`Ctrl+Shift+P`) to create a new project.
 - **2.1.** Write the project name when prompted.
 
-#### 3. Default Project Files
+#### 2.3. Default Project Files
 The extension generates a basic structure, including:
 - `top.v`: The main Verilog module (Top-Level) where you will write your hardware logic.
 - `top.cst`: The Physical Constraints file where you map the top-level Verilog ports (inputs/outputs) to the actual physical pins on the FPGA board.
 
-#### 4. Basic Constraints (`tang.cst`)
+#### 2.4. Basic Constraints (`tang.cst`)
 Depending on your board version, use the following base templates for the system clock:
 
 **Tang Nano 1K:**
@@ -94,7 +109,7 @@ IO_LOC "clk" 4;
 IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 ```
 
-#### 5. Project Configuration (JSON)
+#### 2.5. Project Configuration (JSON)
 The extension relies on a JSON configuration file (e.g., `project.lushay.json`). Depending on your board version, structure your JSON as follows (using `blink` as the project name):
 
 **Tang Nano 1K:**
@@ -136,7 +151,7 @@ The extension relies on a JSON configuration file (e.g., `project.lushay.json`).
 }
 ```
 
-#### 6. Toolchain Execution
+#### 2.6. Toolchain Execution
 With a source file active, click on the Lushay Code toolchain menu. You will find the following options:
 - **Compile:** Runs the toolchain to synthesize the design and generate the bitstream (`.fs`).
 - **Run:** Uses openFPGALoader to program the previously generated bitstream to the board.
@@ -146,7 +161,7 @@ With a source file active, click on the Lushay Code toolchain menu. You will fin
 
 ### Option B: Workflow via Makefile (CLI)
 
-### 1. Project Structure
+#### 2.1. Project Structure
 
 Create your project folder and add a `Makefile` to automate the build process:
 
@@ -159,7 +174,7 @@ your_project/
     └── pins.cst
 ```
 
-### 2. Complete Makefile
+#### 2.2. Complete Makefile
 
 ```makefile
 # Gowin FPGA Build System
@@ -200,7 +215,7 @@ clean:
 	rm -rf build/
 ```
 
-### 3. Development Flow
+#### 2.3. Development Flow
 
 1. **Synthesis:** `make synth` (Uses Yosys to convert HDL to netlist).
 2. **Place and Route:** `make pnr` (Uses nextpnr to place logic elements and route connections).
