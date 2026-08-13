@@ -17,11 +17,12 @@ Development using **Quartus Prime Lite** — Altera platform.
    - **Add Files to Project:** (leave blank for now)
    ![alt text](img/quartus_project_settings_1.png)
    ![alt text](img/quartus_project_settings_2.png)
-   ![alt text](img/quartus_project_settings_3.png)
+   
 4. Click **Next**
 5. Select MAX II device:
    - **Family:** MAX II
    - **Device:** EPM570T100C5 (or other compatible MAX II)
+   ![alt text](img/quartus_project_settings_3.png)
    ![alt text](img/quartus_device_selection.png)
 6. Click **Finish**
    ![alt text](img/quartus_project_finish.png)
@@ -68,20 +69,18 @@ Success: No critical errors in **Messages** tab.
 
 ![alt text](img/quartus_pin_assignments.png)
 
-> **Note:** Pins depend on specific MAX II board. Verifique os esquemáticos originais da sua placa ou arquivos de pinagem (`.qsf` de exemplo) para identificar corretamente em qual pino o `clk` e os `leds` estão conectados.
+> **Note:** Pins depend on specific MAX II board. Check the original schematics of your board or example pinout files (`.qsf`) to properly identify which pin the `clk` and `leds` are connected to.
 
 3. Save project (Ctrl+S) and re-compile
+
 ![alt text](img/quartus_recompile.png)
 
----
 
 ## 5. Place & Route
 
 Already done during compilation (step 3)
 
----
-
-## 7. Programming
+## 6. Programming
 
 1. Connect board via **USB Blaster**
 2. `Tools` → `Programmer`
@@ -93,11 +92,11 @@ Already done during compilation (step 3)
 
 ### Programming via CLI (openFPGALoader)
 
-Se você preferir gravar a placa via terminal utilizando o `openFPGALoader`, o Quartus Programmer precisará antes gerar um arquivo `.svf`.
-1. No Programmer, vá em **File** → **Create/Update** → **Create JAM, SVF, or ISC File...**
-2. Salve como formato `.svf`.
-3. No terminal: `openFPGALoader -c usb-blaster projeto.svf`
-*(Ou converta diretamente via terminal com: `quartus_cpf -c output_files/top.pof output_files/top.svf`)*
+If you prefer to program the board via terminal using `openFPGALoader`, the Quartus Programmer will first need to generate an `.svf` file.
+1. In the Programmer, go to **File** → **Create/Update** → **Create JAM, SVF, or ISC File...**
+2. Save as `.svf` format.
+3. In the terminal: `openFPGALoader -c usb-blaster project.svf`
+*(Or convert directly via terminal with: `quartus_cpf -c output_files/top.pof output_files/top.svf`)*
 
 ---
 
