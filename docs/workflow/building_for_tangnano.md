@@ -78,18 +78,31 @@ This workflow utilizes the Lushay Code extension to automate project creation, s
 
 #### 2.1. Create a Project Folder
 Create an empty directory for your new project and open it in Visual Studio Code.
+![alt text](img/tangnano_vscode_empty.png)
 
 #### 2.2. Initialize the Project
 - Click on the Lushay Code extension icon or open the Command Palette (`Ctrl+Shift+P`) to create a new project.
 - **2.1.** Write the project name when prompted.
+![alt text](img/tangnano_lushay_init.png)
+![alt text](img/tangnano_lushay_init2.png)
 
 #### 2.3. Default Project Files
-The extension generates a basic structure, including:
-- `top.v`: The main Verilog module (Top-Level) where you will write your hardware logic.
-- `top.cst`: The Physical Constraints file where you map the top-level Verilog ports (inputs/outputs) to the actual physical pins on the FPGA board.
+The extension needs a basic structure, including:
+- `blink.v`: The main Verilog module (Top-Level) where you will write your hardware logic. Creates the new file with the.v extension;
+![alt text](img/tangnano_lushay_new_v.png)
+- `blink.cst`: The Physical Constraints file where you map the top-level Verilog ports (inputs/outputs) to the actual physical pins on the FPGA board. Creates the new file with the same name as the top level and with the .cst extension.
+![alt text](img/tangnano_lushay_new_cst.png)
+![alt text](img/tangnano_lushay_new_cst2.png)
 
 #### 2.4. Basic Constraints (`tang.cst`)
-Depending on your board version, use the following base templates for the system clock:
+Depending on the version of your board, you can use the templates below to assist or use the visual environment that the extension provides, in which you can:
+
+- Select board model;
+![alt text](img/tangnano_lushay_board.png)
+- Select a template from the pins;
+![alt text](img/tangnano_lushay_template.png)
+- Individually select which pins will be used and edit them.
+![alt text](img/tangnano_lushay_pins.png)
 
 **Tang Nano 1K:**
 ```cst
@@ -156,7 +169,8 @@ With a source file active, click on the Lushay Code toolchain menu. You will fin
 - **Compile:** Runs the toolchain to synthesize the design and generate the bitstream (`.fs`).
 - **Run:** Uses openFPGALoader to program the previously generated bitstream to the board.
 - **Compile and Run:** Performs the complete pipeline sequentially: synthesis, bitstream generation, and immediate FPGA programming.
-
+![alt text](img/tangnano_lushay_menu.png)
+![alt text](img/tangnano_lushay_run.png)
 ---
 
 ### Option B: Workflow via Makefile (CLI)
