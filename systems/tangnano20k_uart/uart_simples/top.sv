@@ -69,8 +69,6 @@ uart_tx tx_inst (
 );
 
 // ===== CONEXÃO RX -> TX =====
-// rx_done fica em 1 por vários ciclos (suficiente para iniciar o TX)
-// Como o TX demora muito mais para finalizar, não precisamos de latch.
 assign tx_send = rx_done;
 assign tx_data = rx_data;   // Passa dados diretamente
 

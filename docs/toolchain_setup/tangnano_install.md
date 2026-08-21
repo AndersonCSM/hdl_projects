@@ -179,10 +179,22 @@ source ~/.bashrc
 
 ### 4. Verify
 
+If you just edited `~/.bashrc`, open a new terminal or reload the current shell first:
+
 ```bash
-yosys --version
+source ~/.bashrc
+```
+
+Then confirm the tools are on `PATH` and check their versions:
+
+```bash
+command -v yosys
+command -v nextpnr-gowin
+command -v openFPGALoader
+
+yosys -V
 nextpnr-gowin --version
-openFPGALoader --version
+openFPGALoader -h | head -1
 ```
 
 ---
@@ -226,7 +238,7 @@ source ~/.bashrc
 ### Verification
 
 ```bash
-openFPGALoader --version
+openFPGALoader -h | head -1
 ```
 
 ---
@@ -277,7 +289,7 @@ exit
 
 ```bash
 # 1. Verify Yosys
-yosys -version
+yosys -V
 
 # Expected output:
 # Yosys 0.26+...
@@ -286,7 +298,7 @@ yosys -version
 nextpnr-gowin --version
 
 # 3. Verify openFPGALoader
-openFPGALoader --version
+openFPGALoader -h | head -1
 
 # 4. Connect Tang Nano and detect
 openFPGALoader --detect
@@ -320,7 +332,7 @@ To use the tools from any terminal or VS Code extension:
 4. Add the exact path to the `bin` folder of your installation (e.g., `C:\oss-cad-suite\bin`).
 5. Click OK to save all changes.
 
-Open a new terminal and run `yosys --version` and `openFPGALoader --version` to validate the installation.
+Open a new terminal and run `yosys -V` and `openFPGALoader -h | head -1` to validate the installation.
 
 ---
 
