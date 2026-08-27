@@ -22,6 +22,7 @@ This document outlines two development workflows for the Gowin Tang Nano boards 
       - [2.4. Basic Constraints (`tang.cst`)](#24-basic-constraints-tangcst)
       - [2.5. Project Configuration (JSON)](#25-project-configuration-json)
       - [2.6. Toolchain Execution](#26-toolchain-execution)
+  - [](#)
     - [Option B: Workflow via Makefile (CLI)](#option-b-workflow-via-makefile-cli)
       - [2.1. Project Structure](#21-project-structure)
       - [2.2. Complete Makefile](#22-complete-makefile)
@@ -133,6 +134,7 @@ The extension relies on a JSON configuration file (e.g., `project.lushay.json`).
     "top_module": "top",
     "device": "GW1NZ-LV1QN48C6/I5",
     "board": "tangnano1k",
+    "programMode": "ram",     // "programMode": "flash" | "ram";
     "includedFiles": ["blink.v"],
     "constraintFiles": ["blink.cst"]
 }
@@ -146,6 +148,7 @@ The extension relies on a JSON configuration file (e.g., `project.lushay.json`).
     "top_module": "top",
     "device": "GW1NR-LV9QN88PC6/I5",
     "board": "tangnano9k",
+    "programMode": "ram",     // "programMode": "flash" | "ram";
     "includedFiles": ["blink.v"],
     "constraintFiles": ["blink.cst"]
 }
@@ -159,6 +162,7 @@ The extension relies on a JSON configuration file (e.g., `project.lushay.json`).
     "top_module": "top",
     "device": "GW2AR-LV18",
     "board": "tangnano20k",
+    "programMode": "ram",     // "programMode": "flash" | "ram";
     "includedFiles": ["blink.v"],
     "constraintFiles": ["blink.cst"]
 }

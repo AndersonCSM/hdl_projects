@@ -16,3 +16,8 @@ incremental_db/
 simulation/
 compiled_partitions/
 
+# utiliaries
+*.bin
+*.elf
+
+*credentials*
