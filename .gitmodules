@@ -1,0 +1,3 @@
+[submodule "tools/xvc-esp32"]
+	path = tools/xvc-esp32
+	url = https://github.com/kholia/xvc-esp32.git
