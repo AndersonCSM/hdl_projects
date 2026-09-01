@@ -18,12 +18,12 @@ module top (
         // Verifica se o contador atingiu o valor máximo desejado.
         // Se o clock for de 50 MHz, contar até 10_000_000 significa que o LED
         // vai piscar (inverter de estado) 5 vezes por segundo (a cada 200ms).
-        if (cnt == 10_000_000 - 1) begin
-            cnt <= 0;       // Zera o contador usando atribuição não-bloqueante (<=)
+        if (cnt == 25'd9_999_999) begin
+            cnt <= 1'd0;       // Zera o contador usando atribuição não-bloqueante (<=)
             led <= ~led;    // Inverte o estado atual do LED (de aceso para apagado e vice-versa)
         end else begin
             // Caso ainda não tenha atingido o valor, apenas incrementa o contador
-            cnt <= cnt + 1;
+            cnt <= cnt + 1'd1;
         end
     end
     
