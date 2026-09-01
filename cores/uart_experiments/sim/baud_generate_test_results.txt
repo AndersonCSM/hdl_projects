@@ -1,0 +1,46 @@
+==================================================
+   INICIO DA AUTOMACAO: tb_baud_generate          
+==================================================
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+[SUCCESS] Tick recebido no tempo exato (15 ciclos).
+==================================================
+   RELATORIO FINAL DE TESTES                      
+==================================================
+ TOTAL DE SUCCESS : 35
+ TOTAL DE FAILS   : 0
+==================================================
+ RESULTADO: APROVADO COM SUCESSO!
+==================================================

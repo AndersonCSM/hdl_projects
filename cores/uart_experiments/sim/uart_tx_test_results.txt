@@ -1,0 +1,58 @@
+=============================================
+ Testes do Transmissor UART (tx)
+=============================================
+
+TC-1: Estado inicial após reset
+[OK]   Linha em repouso após reset (tempo 190000)
+[OK]   tx_valid em IDLE após reset (tempo 190000)
+
+TC-2: Transmissão do byte 0xA5 (verificação detalhada)
+[DEBUG] Início da transmissão detectado em 290000
+[OK]   Start bit (tempo 5350000)
+[OK]   Bit de dados[0] (tempo 10470000)
+[OK]   Bit de dados[1] (tempo 15590000)
+[OK]   Bit de dados[2] (tempo 20710000)
+[OK]   Bit de dados[3] (tempo 25830000)
+[OK]   Bit de dados[4] (tempo 30950000)
+[OK]   Bit de dados[5] (tempo 36070000)
+[OK]   Bit de dados[6] (tempo 41190000)
+[OK]   Bit de dados[7] (tempo 46310000)
+[OK]   Stop bit (tempo 51430000)
+[INFO] Transmissão do byte 0xA5 concluída com sucesso
+
+TC-3: Envio de todos os 256 valores
+[OK] Loop de 256 valores concluído
+
+TC-4: Transmissões consecutivas (back-to-back)
+[OK] Duas transmissões consecutivas realizadas
+
+TC-5: enable_tx mantido alto
+[OK] Transmissão com enable_tx alto por vários ciclos
+
+TC-6: Reset durante a transmissão
+[OK]   Linha após reset durante transmissão (tempo 13329050000)
+[OK]   tx_valid após reset durante transmissão (tempo 13329050000)
+
+TC-7: Mudança de data_i durante a transmissão
+[DEBUG] Início da transmissão detectado em 13329150000
+[OK]   Start bit (tempo 13334210000)
+[OK]   Bit de dados[0] (tempo 13339330000)
+[OK]   Bit de dados[1] (tempo 13344450000)
+[OK]   Bit de dados[2] (tempo 13349570000)
+[OK]   Bit de dados[3] (tempo 13354690000)
+[OK]   Bit de dados[4] (tempo 13359810000)
+[OK]   Bit de dados[5] (tempo 13364930000)
+[OK]   Bit de dados[6] (tempo 13370050000)
+[OK]   Bit de dados[7] (tempo 13375170000)
+[OK]   Stop bit (tempo 13380290000)
+[OK] Transmissão não foi afetada pela mudança de data_i
+
+TC-8: Fase do baud_tick no início
+[OK] Transmissão iniciada logo após baud_tick
+
+TC-9: Fase do baud_tick no meio do período
+[OK] Transmissão iniciada no meio do período de baud_tick
+
+=============================================
+TODOS OS TESTES PASSARAM!
+=============================================

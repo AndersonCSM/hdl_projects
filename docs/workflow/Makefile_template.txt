@@ -1,0 +1,35 @@
+VERILOG = iverilog
+VVP = vvp
+SIM_DIR = ../sim
+TB_DIR = .
+RTL_DIR = ../rtl
+FLAGS = -Wall -g2012 -I$(TB_DIR) -I$(RTL_DIR)
+TESTS = tb_baud_generate tb_fifo tb_uart tb_uart_rx tb_uart_tx tb_rx tb_hdl
+DESIGN_MAP = \
+    tb_baud_generate=baud_generate \
+    tb_fifo=fifo \
+    tb_uart=uart \
+    tb_uart_rx=rx \
+    tb_uart_tx=tx \
+    tb_rx=rx \
+    tb_hdl=hdl
+
+get_design = $(word 2,$(subst =, ,$(filter $1=%,$(DESIGN_MAP))))
+
+all: $(TESTS)
+
+$(SIM_DIR):
+	mkdir -p $(SIM_DIR)
+
+$(TESTS): | $(SIM_DIR)
+	@echo "--------------------------------------------------"
+	@echo " Compilando e Rodando: $@"
+	@echo "--------------------------------------------------"
+	$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/$(call get_design,$@).v
+	$(VVP) $(SIM_DIR)/$@.vvp
+	@echo "--------------------------------------------------"
+
+clean:
+	rm -rf $(SIM_DIR)
+
+.PHONY: all clean $(TESTS)

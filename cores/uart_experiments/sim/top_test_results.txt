@@ -1,0 +1,52 @@
+=============================================
+ Testes do Módulo uart_top (UART + FIFOs)
+=============================================
+
+TC-1: Estado inicial após reset
+[OK]   tx_ready_o = 1 após reset (tempo 378000)
+[OK]   rx_valid_o = 0 (FIFO RX vazia) (tempo 378000)
+[OK]   rx_data_o = 0 após reset (tempo 378000)
+[OK]   uart_tx_o = 1 (repouso) após reset (tempo 378000)
+[OK]   tx_full_o = 0 (FIFO TX vazia) (tempo 378000)
+[OK]   rx_full_o = 0 (FIFO RX vazia) (tempo 378000)
+
+TC-2: Transmissão de um byte via FIFO TX
+[INFO] Transmissão do byte 0xA5 concluída
+
+TC-3: Recepção de um byte via FIFO RX
+[OK]   Byte recebido na FIFO RX (tempo 82279000)
+
+TC-4: Loopback interno (um byte)
+[OK]   Byte ecoado no loopback (tempo 168787000)
+
+TC-5: Transmissão de múltiplos bytes (3 bytes)
+[OK] Transmissão de múltiplos bytes concluída
+
+TC-6: Recebimento de múltiplos bytes (3 bytes)
+[OK]   Byte 1 recebido (tempo 341803000)
+[OK]   Byte 2 recebido (tempo 428239000)
+[OK]   Byte 3 recebido (tempo 514675000)
+[OK] Recebimento de múltiplos bytes concluído
+
+TC-7: Loopback interno de múltiplos bytes (3 bytes)
+[OK]   Byte 1 ecoado (tempo 596395000)
+[OK]   Byte 2 ecoado (tempo 682795000)
+[OK]   Byte 3 ecoado (tempo 769195000)
+[OK] Loopback de múltiplos bytes concluído
+
+TC-8: tx_full_o permanece baixo durante envio
+[OK]   tx_full_o = 0 após transmissões (tempo 855666000)
+
+TC-9: Enchimento da FIFO RX e rx_full_o
+[OK]   rx_full_o = 1 quando FIFO RX cheia (tempo 2233314000)
+[OK]   rx_full_o = 0 após esvaziar FIFO RX (tempo 2233891000)
+
+TC-10: Reset durante operação
+[OK]   tx_ready_o = 1 após reset (tempo 2238526000)
+[OK]   rx_valid_o = 0 após reset (tempo 2238526000)
+[OK]   tx_full_o = 0 após reset (tempo 2238526000)
+[OK]   rx_full_o = 0 após reset (tempo 2238526000)
+
+=============================================
+TODOS OS TESTES PASSARAM!
+=============================================

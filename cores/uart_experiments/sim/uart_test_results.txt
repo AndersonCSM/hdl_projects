@@ -1,0 +1,38 @@
+=============================================
+ Testes da UART (tx + rx integrados)
+=============================================
+
+TC-1: Estado inicial após reset
+[OK]   tx_ready_o = 1 após reset (tempo 378000)
+[OK]   uart_tx_o = 1 (repouso) após reset (tempo 378000)
+[OK]   rx_valid_o = 0 após reset (tempo 378000)
+[OK]   rx_data_o = 0 após reset (tempo 378000)
+
+TC-2: Transmissão do byte 0xA5
+[OK]   Start bit (tempo 9090000)
+[OK]   Bit de dados[0] (tempo 17730000)
+[OK]   Bit de dados[1] (tempo 26370000)
+[OK]   Bit de dados[2] (tempo 35010000)
+[OK]   Bit de dados[3] (tempo 43650000)
+[OK]   Bit de dados[4] (tempo 52290000)
+[OK]   Bit de dados[5] (tempo 60930000)
+[OK]   Bit de dados[6] (tempo 69570000)
+[OK]   Bit de dados[7] (tempo 78210000)
+[OK]   Stop bit (tempo 86850000)
+[INFO] Transmissão do byte 0xA5 concluída
+
+TC-3: Recepção do byte 0x5A
+[OK]   Byte recebido (tempo 177138000)
+
+TC-4: Loopback externo TX->RX (assign)
+[OK]   Byte loopback recebido (tempo 263646000)
+
+TC-5: Reset durante transmissão
+[OK]   tx_ready_o = 1 após reset durante TX (tempo 269290000)
+
+TC-6: Transmissões consecutivas
+[OK] Três transmissões consecutivas realizadas
+
+=============================================
+TODOS OS TESTES PASSARAM!
+=============================================

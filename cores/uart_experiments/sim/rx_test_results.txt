@@ -1,0 +1,38 @@
+=============================================
+ Testes do Receptor UART (rx)
+=============================================
+
+TC-1: Estado inicial após reset
+[OK]   data_o inicial após reset (tempo 190000)
+[OK]   rx_valid em IDLE após reset (tempo 190000)
+
+TC-2: Recepção do byte 0xA5
+[OK]   Valor recebido (tempo 53710000)
+[INFO] Byte 0xA5 recebido com sucesso
+
+TC-3: Recepção de todos os 256 valores
+[OK] Loop de 256 valores concluído
+
+TC-4: Recepções consecutivas (back-to-back)
+[OK] Duas recepções consecutivas realizadas
+
+TC-5: enable_rx = 0 (não deve receber)
+[OK]   rx_valid permanece 0 com enable_rx=0 (tempo 14748630000)
+[OK]   data_o permanece 0 com enable_rx=0 (tempo 14748630000)
+
+TC-6: Reset durante a recepção
+[OK]   rx_valid após reset durante recepção (tempo 14805090000)
+
+TC-7: Glitch de curta duração no sinal
+[OK]   rx_valid não deve ser ativado por glitch (tempo 14905170000)
+[OK]   data_o permanece 0 após glitch (tempo 14905170000)
+
+TC-8: Fase do baud_tick no início
+[OK]   Byte recebido com fase alinhada (tempo 14958990000)
+
+TC-9: Fase do baud_tick no meio do período
+[OK]   Byte recebido com fase defasada (tempo 15015350000)
+
+=============================================
+TODOS OS TESTES PASSARAM!
+=============================================
