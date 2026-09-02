@@ -1,0 +1,69 @@
+=============================================
+ Testes da FIFO
+=============================================
+
+TC-1: Estado inicial após reset
+[OK]   empty_o em 1 após reset (tempo 190000)
+[OK]   full_o em 0 após reset (tempo 190000)
+[OK]   count_o = 0 após reset (tempo 190000)
+[OK]   data_out_o = 0 após reset (tempo 190000)
+
+TC-2: Escrita e leitura de um único dado
+[OK]   count_o = 1 após push (tempo 290000)
+[OK]   empty_o = 0 após push (tempo 290000)
+[OK]   Dado lido corresponde ao escrito (tempo 330000)
+[OK]   count_o = 0 após pop (tempo 330000)
+[OK]   empty_o = 1 após pop (tempo 330000)
+
+TC-3: Encher a FIFO completamente
+[OK]   count_o = 16 após encher (tempo 1030000)
+[OK]   full_o = 1 quando cheia (tempo 1030000)
+[OK]   empty_o = 0 quando cheia (tempo 1030000)
+
+TC-4: Esvaziar a FIFO e verificar ordem dos dados
+[OK]   Dado 0 lido na ordem correta (tempo 1070000)
+[OK]   Dado 1 lido na ordem correta (tempo 1110000)
+[OK]   Dado 2 lido na ordem correta (tempo 1150000)
+[OK]   Dado 3 lido na ordem correta (tempo 1190000)
+[OK]   Dado 4 lido na ordem correta (tempo 1230000)
+[OK]   Dado 5 lido na ordem correta (tempo 1270000)
+[OK]   Dado 6 lido na ordem correta (tempo 1310000)
+[OK]   Dado 7 lido na ordem correta (tempo 1350000)
+[OK]   Dado 8 lido na ordem correta (tempo 1390000)
+[OK]   Dado 9 lido na ordem correta (tempo 1430000)
+[OK]   Dado 10 lido na ordem correta (tempo 1470000)
+[OK]   Dado 11 lido na ordem correta (tempo 1510000)
+[OK]   Dado 12 lido na ordem correta (tempo 1550000)
+[OK]   Dado 13 lido na ordem correta (tempo 1590000)
+[OK]   Dado 14 lido na ordem correta (tempo 1630000)
+[OK]   Dado 15 lido na ordem correta (tempo 1670000)
+[OK]   count_o = 0 após esvaziar (tempo 1670000)
+[OK]   empty_o = 1 após esvaziar (tempo 1670000)
+[OK]   full_o = 0 após esvaziar (tempo 1670000)
+
+TC-5: Operações intercaladas
+[OK]   Primeiro pop = 0x11 (tempo 1890000)
+[OK]   Segundo pop = 0x22 (tempo 1970000)
+[OK]   Terceiro pop = 0x33 (tempo 2010000)
+[OK]   Quarto pop = 0x44 (tempo 2050000)
+[OK]   FIFO vazia após operações intercaladas (tempo 2050000)
+[OK]   empty_o = 1 após esvaziar (tempo 2050000)
+
+TC-6: Reset durante operação
+[OK]   count_o = 0 após reset durante escrita (tempo 2230000)
+[OK]   empty_o = 1 após reset (tempo 2230000)
+[OK]   full_o = 0 após reset (tempo 2230000)
+
+TC-7: Escrita quando cheia
+[OK]   count_o permanece 16 após tentativa de escrita com full (tempo 2950000)
+[OK]   full_o permanece 1 (tempo 2950000)
+[OK]   Último dado é 0x0F (não sobrescrito) (tempo 3590000)
+
+TC-8: Leitura quando vazia
+[OK]   count_o permanece 0 (tempo 3670000)
+[OK]   empty_o permanece 1 (tempo 3670000)
+[OK]   data_out_o permanece 0 (ou último valor) (tempo 3670000)
+
+=============================================
+TODOS OS TESTES PASSARAM!
+=============================================

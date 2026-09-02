@@ -15,7 +15,7 @@ DESIGN_MAP = \
     tb_uart=uart \
     tb_rx=rx \
     tb_tx=tx \
-    tb_top=uart_top \
+    tb_top=top \
 	tb_fpga_top=fpga_top
 
 get_design = $(word 2,$(subst =, ,$(filter $1=%,$(DESIGN_MAP))))
@@ -30,11 +30,11 @@ $(TESTS): | $(SIM_DIR)
 	@echo " Compilando e Rodando: $@"
 	@echo "--------------------------------------------------"
 	@if [ "$@" = "tb_top" ]; then \
-		$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/uart_top.v $(RTL_DIR)/uart.v $(RTL_DIR)/tx.v $(RTL_DIR)/rx.v $(RTL_DIR)/baud_generate.v $(RTL_DIR)/fifo.v; \
+		$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/top.v $(RTL_DIR)/uart.v $(RTL_DIR)/tx.v $(RTL_DIR)/rx.v $(RTL_DIR)/baud_generate.v $(RTL_DIR)/fifo.v; \
 	elif [ "$@" = "tb_uart" ]; then \
 		$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/uart.v $(RTL_DIR)/tx.v $(RTL_DIR)/rx.v $(RTL_DIR)/baud_generate.v; \
 	elif [ "$@" = "tb_fpga_top" ]; then \
-		$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/fpga_top.v $(RTL_DIR)/uart_top.v $(RTL_DIR)/uart.v $(RTL_DIR)/tx.v $(RTL_DIR)/rx.v $(RTL_DIR)/baud_generate.v $(RTL_DIR)/fifo.v; \
+		$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/fpga_top.v $(RTL_DIR)/top.v $(RTL_DIR)/uart.v $(RTL_DIR)/tx.v $(RTL_DIR)/rx.v $(RTL_DIR)/baud_generate.v $(RTL_DIR)/fifo.v; \
 	else \
 		$(VERILOG) $(FLAGS) -o $(SIM_DIR)/$@.vvp $(TB_DIR)/$@.v $(RTL_DIR)/$(call get_design,$@).v; \
 	fi

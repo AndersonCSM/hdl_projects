@@ -17,8 +17,8 @@ module fpga_top (
     
     reg [2:0] state;
 
-    // wire reset_ativo_baixo = ~rst_n;
-    wire reset_ativo_baixo = 1;
+    wire reset_ativo_baixo = ~rst_n;
+    // wire reset_ativo_baixo = 1;
 
     localparam  S_IDLE  = 3'd0,
                 S_FETCH = 3'd1,   // Aguarda a RAM da FIFO entregar o dado
@@ -27,7 +27,7 @@ module fpga_top (
                 S_WAIT2 = 3'd4;
 
     // Instância do uart_top com pinos FÍSICOS ativos (LOOPBACK=0)
-    uart_top #(
+    top #(
         .CLK_FREQ(27_000_000),
         .BAUD_RATE(9600),
         .ENABLE_TX(1'b1),

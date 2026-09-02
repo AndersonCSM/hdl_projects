@@ -3,7 +3,9 @@
 module tb_fpga_top();
 
     parameter CLK_PERIOD = 37.037;  // 27 MHz
-    parameter BIT_PERIOD = 8680.55; // 115200 bps
+    parameter BAUD_RATE = 9600;
+    localparam DIVISOR = (27000000 + BAUD_RATE*8) / (BAUD_RATE*16);
+    parameter BIT_PERIOD = DIVISOR * 16 * CLK_PERIOD;
 
     reg clk;
     reg rst_n;
@@ -67,13 +69,13 @@ module tb_fpga_top();
         integer i;
     begin
         rx = 1'b0; // Start bit
-        #(BIT_PERIOD);
+        repeat(DIVISOR * 16) @(posedge clk);
         for (i = 0; i < 8; i = i + 1) begin
             rx = data[i];
-            #(BIT_PERIOD);
+            repeat(DIVISOR * 16) @(posedge clk);
         end
         rx = 1'b1; // Stop bit
-        #(BIT_PERIOD);
+        repeat(DIVISOR * 32) @(posedge clk); // 2 Stop bits para dar margem à FSM do DUT
     end
     endtask
 
@@ -84,16 +86,16 @@ module tb_fpga_top();
         fork
             begin
                 wait(tx == 1'b0);    // Espera a borda de descida do Start bit
-                #(BIT_PERIOD / 2.0); // Move para o centro do Start bit
-                #(BIT_PERIOD);       // Move para o centro do Bit 0
+                repeat(DIVISOR * 8) @(posedge clk); // Move para o centro do Start bit
+                repeat(DIVISOR * 16) @(posedge clk); // Move para o centro do Bit 0
                 for (i = 0; i < 8; i = i + 1) begin
                     data[i] = tx;
-                    #(BIT_PERIOD);
+                    repeat(DIVISOR * 16) @(posedge clk);
                 end
                 // Aqui estamos no centro do Stop bit, podemos sair
             end
             begin
-                #500000; // Timeout de segurança (~5 bytes)
+                repeat(DIVISOR * 16 * 50) @(posedge clk);
                 log_message($sformatf("[ERRO] Timeout aguardando TX enviar byte! (tempo %0t)", $time));
                 errors = errors + 1;
             end

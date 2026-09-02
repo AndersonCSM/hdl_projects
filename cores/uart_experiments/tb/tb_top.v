@@ -44,7 +44,7 @@ integer test_id = 0;
 integer log_file;
 
 // Instância do DUT principal (sem loopback)
-uart_top #(
+top #(
     .CLK_FREQ(CLK_FREQ),
     .BAUD_RATE(BAUD_RATE),
     .ENABLE_TX(1'b1),
@@ -68,7 +68,7 @@ uart_top #(
 );
 
 // Instância do DUT com loopback
-uart_top #(
+top #(
     .CLK_FREQ(CLK_FREQ),
     .BAUD_RATE(BAUD_RATE),
     .ENABLE_TX(1'b1),

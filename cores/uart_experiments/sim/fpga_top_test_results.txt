@@ -6,20 +6,20 @@ TC-1: Estado inicial após reset
 [OK]   TX em repouso após reset
 
 TC-2: Eco de um único caractere ('A' - 0x41)
-[OK]   Eco do caractere 'A' (tempo 169412000)
+[OK]   Eco do caractere 'A' (tempo 1977107000)
 
 TC-3: Eco da string 'Hello FPGA!' (Back-to-back)
-[OK]   Eco do char 'H' (48) (tempo 337379000)
-[OK]   Eco do char 'e' (65) (tempo 426085000)
-[OK]   Eco do char 'l' (6c) (tempo 514976000)
-[OK]   Eco do char 'l' (6c) (tempo 603868000)
-[OK]   Eco do char 'o' (6f) (tempo 692759000)
-[OK]   Eco do char ' ' (20) (tempo 781650000)
-[OK]   Eco do char 'F' (46) (tempo 870541000)
-[OK]   Eco do char 'P' (50) (tempo 959432000)
-[OK]   Eco do char 'G' (47) (tempo 1048324000)
-[OK]   Eco do char 'A' (41) (tempo 1137215000)
-[OK]   Eco do char '!' (21) (tempo 1226106000)
+[OK]   Eco do char 'H' (48) (tempo 3952788000)
+[OK]   Eco do char 'e' (65) (tempo 5100077000)
+[OK]   Eco do char 'l' (6c) (tempo 6247366000)
+[OK]   Eco do char 'l' (6c) (tempo 7394655000)
+[OK]   Eco do char 'o' (6f) (tempo 8541944000)
+[OK]   Eco do char ' ' (20) (tempo 9689233000)
+[OK]   Eco do char 'F' (46) (tempo 10836522000)
+[OK]   Eco do char 'P' (50) (tempo 11983812000)
+[OK]   Eco do char 'G' (47) (tempo 13131101000)
+[OK]   Eco do char 'A' (41) (tempo 14278390000)
+[OK]   Eco do char '!' (21) (tempo 15425679000)
 
 =============================================
 TODOS OS TESTES PASSARAM!
