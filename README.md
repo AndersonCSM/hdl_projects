@@ -23,15 +23,15 @@ The educational processor implementations have been moved to their own dedicated
 
 Choose the guide that matches your OS and target FPGA:
 
-- **Tang Nano (Open Source / Linux):** [`docs/suit_install.md`](docs/suit_install.md)
-- **Quartus Prime Lite (Windows/Linux):** [`docs/quartus_install.md`](docs/quartus_install.md)
+- **Tang Nano (Open Source / Linux):** [`docs/toolchain_setup/tangnano_install.md`](docs/toolchain_setup/tangnano_install.md)
+- **Quartus Prime Lite (Windows/Linux):** [`docs/toolchain_setup/quartus_install.md`](docs/toolchain_setup/quartus_install.md)
 
 ## Workflows and Step-by-Step
 
 Once installed, follow these guides to run your first project:
 
-- **Tang Nano:** [`docs/tangnano_workflow.md`](docs/tangnano_workflow.md) (Gowin IDE and Open-source Toolchain)
-- **Altera MAX II:** [`docs/altera_workflow.md`](docs/altera_workflow.md) (Quartus Prime Lite)
+- **Tang Nano:** [`docs/workflow/building_for_tangnano.md`](docs/workflow/building_for_tangnano.md) (Gowin IDE and Open-source Toolchain)
+- **Altera MAX II:** [`docs/workflow/building_for_altera.md`](docs/workflow/building_for_altera.md) (Quartus Prime Lite)
 
 ---
 
